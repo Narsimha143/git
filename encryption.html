@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encrypt/Decrypt Text</title>
+</head>
+<body>
+    <h1>Encrypt/Decrypt Text</h1>
+    <form action="/encrypt" method="POST">
+        <textarea name="text" rows="4" cols="50" placeholder="Enter text to encrypt"></textarea><br>
+        <button type="submit">Encrypt</button>
+    </form>
+    {% if encrypted_text %}
+        <h2>Encrypted Text</h2>
+        <p>{{ encrypted_text }}</p>
+    {% endif %}
+    <form action="/decrypt" method="POST">
+        <textarea name="encrypted_text" rows="4" cols="50" placeholder="Enter text to decrypt"></textarea><br>
+        <button type="submit">Decrypt</button>
+    </form>
+    {% if decrypted_text %}
+        <h2>Decrypted Text</h2>
+        <p>{{ decrypted_text }}</p>
+    {% endif %}
+</body>
+</html>
